@@ -1,0 +1,63 @@
+.header {
+background-color: lightcyan;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.49);
+  position: relative;
+}
+.menu {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+  li {
+    a {
+      color: #173A56;
+      &:hover {
+        color: #02897A;
+      }
+    }
+  }
+}
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mobileBtn {
+  display: none;
+}
+
+@media screen and (max-width: 700px){
+  .mobileBtn {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    z-index: 1;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: lightskyblue;
+    z-index: 1;
+    transition: left .5s ease-out;
+    li {
+      font-size: 24px;
+    }
+  }
+  .active {
+    left: 0;
+  }
+}
